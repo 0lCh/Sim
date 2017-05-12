@@ -13,6 +13,8 @@ public class Main2Activity extends AppCompatActivity {
 
     static int t = 0;
     static int k=0;
+   static String nm1;
+    static String nm2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,8 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         SurfaceView mySurface = (SurfaceView) findViewById(R.id.surfaceView2);
         k = getIntent().getIntExtra("count", 0);
-
+nm1 = getIntent().getStringExtra("name1");
+        nm2 = getIntent().getStringExtra("name2");
     }
 
 
@@ -29,6 +32,7 @@ public class Main2Activity extends AppCompatActivity {
         Intent intent = new Intent(Main2Activity.this, MainActivity.class);
         startActivity(intent);
         DrawThread.qw=0;
+        DrawThread.t=0;
     }
 
 

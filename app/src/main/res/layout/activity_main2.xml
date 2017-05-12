@@ -6,16 +6,20 @@
     android:layout_height="match_parent"
     tools:context="game.samsung.it.school.example.graphproject.MainActivity">
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="149dp"
-        android:layout_height="77dp"
-        android:text="@string/stat"
-        tools:layout_editor_absoluteX="219dp"
-        tools:layout_editor_absoluteY="418dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText4"
+        android:layout_alignEnd="@+id/button5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/button5"
+        android:layout_alignTop="@+id/editText3"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:text="Игрок №1"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/button5"
@@ -27,7 +31,9 @@
         tools:layout_editor_absoluteY="420dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -81,5 +87,42 @@
         android:text="Количество узлов"
         android:textAlignment="center"
         android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/radioGroup"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="66dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText3"
+        android:layout_alignStart="@+id/editText3"
+        android:layout_below="@+id/editText3"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText4"
+        android:layout_alignEnd="@+id/textView6"
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_alignRight="@+id/textView6"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_alignTop="@+id/editText4"
+        android:text="Игрок №2"
+        android:textSize="24sp" />
 
 </RelativeLayout>

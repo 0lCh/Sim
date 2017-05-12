@@ -85,7 +85,7 @@ class DrawThread extends Thread {
     private GraphMatrix graphMatrix = new GraphMatrix(MainActivity.k);
 
 
-   public int t = 0;
+    public static int t = 0;
 
     public DrawThread(Context context, SurfaceHolder surfaceHolder) {
         this.surfaceHolder = surfaceHolder;
@@ -95,12 +95,12 @@ class DrawThread extends Thread {
     public void searchFirstNode(int x, int y) {
 
         FirstNode = graphMatrix.searchNode(x, y);
-        if ((FirstNode != 0) ) t++;
+        if ((FirstNode != 0)) t++;
     }
 
     public void searchSecondNode(int x, int y) {
         SecondNode = graphMatrix.searchNode(x, y);
-        if ((SecondNode != 0) && (FirstNode != SecondNode) &&(FirstNode!=0)) {
+        if ((SecondNode != 0) && (FirstNode != SecondNode) && (FirstNode != 0)) {
             if (graphMatrix.retweight(FirstNode, SecondNode) == 1) t++;
             else t--;
         }
@@ -133,13 +133,14 @@ class DrawThread extends Thread {
                 graphMatrix.getXY(graphMatrix.x, graphMatrix.y, graphMatrix.r);
 
                 graphMatrix.drawCircle(canvas);
-if (qw==0){
-                if (((FirstNode != 0) && (FirstNode != SecondNode) && (SecondNode != 0) && (graphMatrix.retweight(FirstNode, SecondNode) == 1) && (t % 2 == 0)) ||
-                        ((FirstNode != SecondNode) && (SecondNode != 0)&&(FirstNode != 0) && (t % 2 == 0) && (t == 2))) {
-                    if (t / 2 % 2 == 0) graphMatrix.addEdge(FirstNode, SecondNode, 2);
-                    if (t / 2 % 2 == 1) graphMatrix.addEdge(FirstNode, SecondNode, 1);
+                if (qw == 0) {
+                    if (((FirstNode != 0) && (FirstNode != SecondNode) && (SecondNode != 0) && (graphMatrix.retweight(FirstNode, SecondNode) == 1) && (t % 2 == 0)) ||
+                            ((FirstNode != SecondNode) && (SecondNode != 0) && (FirstNode != 0) && (t % 2 == 0) && (t == 2))) {
+                        if (t / 2 % 2 == 0) graphMatrix.addEdge(FirstNode, SecondNode, 2);
+                        if (t / 2 % 2 == 1) graphMatrix.addEdge(FirstNode, SecondNode, 1);
 
-                }}
+                    }
+                }
                 graphMatrix.searchTriangle();
                 graphMatrix.drawLine(canvas);
                 graphMatrix.drawCircle(canvas);
@@ -151,14 +152,18 @@ if (qw==0){
                     paint.setColor(Color.parseColor("#b0ffffff"));
                     canvas.drawRect((float) (graphMatrix.x - graphMatrix.x * 0.9), (float) (graphMatrix.y - graphMatrix.y * 0.9), (float) (graphMatrix.x + graphMatrix.x * 0.9), (float) (graphMatrix.y + graphMatrix.y * 0.9), paint);
                     paint.setColor(Color.BLACK);
-                    paint.setTextSize((float) ( graphMatrix.x*0.2));
-                   if (qw==2) {
-                       paint.setColor(Color.RED);
-                       canvas.drawText("Выиграл игрок 1", (float) (graphMatrix.x-0.8*graphMatrix.x),graphMatrix.y,paint);
-                   }
-                    if (qw==1) {
+                    paint.setTextSize((float) (graphMatrix.x * 0.2));
+                    if (qw == 2) {
+                        paint.setColor(Color.RED);
+                        canvas.drawText("Выиграл игрок", graphMatrix.x, graphMatrix.y, paint);
+                        canvas.drawText(Main2Activity.nm1, (float) (graphMatrix.x - 0.5 * graphMatrix.x), (float) (graphMatrix.y - (graphMatrix.x * 0.3)), paint);
+                    }
+                    paint.setTextAlign(Paint.Align.CENTER);
+                    if (qw == 1) {
                         paint.setColor(Color.BLUE);
-                        canvas.drawText("Выиграл игрок 2", (float) (graphMatrix.x-0.8*graphMatrix.x),graphMatrix.y,paint);
+
+                        canvas.drawText("Выиграл игрок", graphMatrix.x, graphMatrix.y, paint);
+                        canvas.drawText(Main2Activity.nm2, graphMatrix.x, (int) (graphMatrix.y + graphMatrix.y * 0.2), paint);
                     }
                 }
             } finally {
