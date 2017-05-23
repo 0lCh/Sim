@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case -1:
-                    case R.id.radioButton5:
-                        k = 5;
-                        break;
+                    //case R.id.radioButton5:
+                       // k = 5;
+                        //break;
                     case R.id.radioButton6:
                         k = 6;
                         break;

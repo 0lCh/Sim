@@ -12,18 +12,16 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/editText4"
         android:layout_alignEnd="@+id/button5"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/button5"
         android:layout_alignTop="@+id/editText3"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
         android:text="Игрок №1"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="141dp"
+        android:layout_width="match_parent"
         android:layout_height="75dp"
         android:onClick="play"
         android:text="@string/play"
@@ -31,40 +29,31 @@
         tools:layout_editor_absoluteY="420dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentStart="true" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="161dp"
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <RadioButton
-            android:id="@+id/radioButton5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="5" />
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:paddingLeft="40dp">
 
         <RadioButton
             android:id="@+id/radioButton6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="6" />
+            android:text="1" />
 
         <RadioButton
             android:id="@+id/radioButton7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="7" />
+            android:text="2" />
 
         <RadioButton
             android:id="@+id/radioButton8"
@@ -73,20 +62,20 @@
             android:layout_toEndOf="@+id/radioGroup"
             android:layout_toRightOf="@+id/radioGroup"
             android:layout_weight="1"
-            android:text="8" />
+            android:text="3" />
     </RadioGroup>
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/radioGroup"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="87dp"
-        android:text="Количество узлов"
+        android:text="Уровень сложности"
         android:textAlignment="center"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:layout_marginBottom="30dp"
+        android:layout_above="@+id/editText3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/editText3"
@@ -95,11 +84,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/radioGroup"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="66dp"
+        android:layout_marginTop="37dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:inputType="textCapWords|textCapSentences" />
 
     <EditText
         android:id="@+id/editText4"
@@ -123,6 +111,20 @@
         android:layout_alignStart="@+id/textView6"
         android:layout_alignTop="@+id/editText4"
         android:text="Игрок №2"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        tools:inputType="textCapWords|textCapSentences" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SIM"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="70sp"
+        android:layout_marginTop="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
