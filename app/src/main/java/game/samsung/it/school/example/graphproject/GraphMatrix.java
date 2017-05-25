@@ -15,9 +15,9 @@ import android.widget.Toast;
  */
 
 public class GraphMatrix {
-   private Paint mPaint = new Paint();
+    private Paint mPaint = new Paint();
     static GraphNode[] matrix;
-   private int ver;
+    private int ver;
     float x;
     float y;
     float r;

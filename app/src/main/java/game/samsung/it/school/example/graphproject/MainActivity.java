@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        EditText name1 =(EditText)findViewById(R.id.editText3);
-        EditText name2 =(EditText)findViewById(R.id.editText4);
+        EditText name1 = (EditText) findViewById(R.id.editText3);
+        EditText name2 = (EditText) findViewById(R.id.editText4);
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case -1:
-                    //case R.id.radioButton5:
-                       // k = 5;
+                        //case R.id.radioButton5:
+                        // k = 5;
                         //break;
                     case R.id.radioButton6:
                         k = 6;
@@ -58,14 +58,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void play(View view) {
-if (k!=0){
-    EditText name1 =(EditText)findViewById(R.id.editText3);
-    EditText name2 =(EditText)findViewById(R.id.editText4);
-        Intent intent = new Intent(MainActivity.this, Main2Activity.class);
-    intent.putExtra("count", k);
-    intent.putExtra("name1",name1.getText().toString());
-    intent.putExtra("name2",name2.getText().toString());
-        startActivity(intent);} else                     Toast.makeText(getApplicationContext(), "Выберите количество узлов",
-        Toast.LENGTH_SHORT).show();
+        if (k != 0) {
+            EditText name1 = (EditText) findViewById(R.id.editText3);
+            EditText name2 = (EditText) findViewById(R.id.editText4);
+            Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+            intent.putExtra("count", k);
+            intent.putExtra("name1", name1.getText().toString());
+            intent.putExtra("name2", name2.getText().toString());
+            startActivity(intent);
+        } else Toast.makeText(getApplicationContext(), "Выберите количество узлов",
+                Toast.LENGTH_SHORT).show();
     }
 }

@@ -4,4 +4,6 @@
     <string name="newg">Новая игра</string>
     <string name="play">Играть</string>
     <string name="stat">Статистика</string>
+    <string name="win">Выиграл </string>
+    <string name="progress">Ход игрока </string>
 </resources>

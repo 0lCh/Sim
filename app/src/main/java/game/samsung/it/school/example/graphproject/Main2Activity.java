@@ -13,22 +13,21 @@ import android.widget.Toast;
 
 public class Main2Activity extends AppCompatActivity {
 
-    static int t = 0;
-    static int k=0;
-   static String nm1;
+    static int k = 0;
+    static String nm1;
     static String nm2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DrawThread.qw=0;
+        DrawThread.qw = 0;
         setContentView(R.layout.activity_main);
 
         k = getIntent().getIntExtra("count", 0);
-nm1 = getIntent().getStringExtra("name1");
+        nm1 = getIntent().getStringExtra("name1");
         nm2 = getIntent().getStringExtra("name2");
     }
-    /*
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -40,7 +39,6 @@ nm1 = getIntent().getStringExtra("name1");
     @Override
     protected void onResume() {
         super.onResume();
-
         Toast.makeText(getApplicationContext(), "onResume()", Toast.LENGTH_SHORT).show();
         Log.i("TAG", "onResume()");
     }
@@ -48,6 +46,7 @@ nm1 = getIntent().getStringExtra("name1");
     @Override
     protected void onPause() {
         super.onPause();
+
         Toast.makeText(getApplicationContext(), "onPause()", Toast.LENGTH_SHORT).show();
         Log.i("TAG", "onPause()");
     }
@@ -55,7 +54,6 @@ nm1 = getIntent().getStringExtra("name1");
     @Override
     protected void onStop() {
         super.onStop();
-
         Toast.makeText(getApplicationContext(), "onStop()", Toast.LENGTH_SHORT).show();
         Log.i("TAG", "onStop()");
     }
@@ -67,21 +65,21 @@ nm1 = getIntent().getStringExtra("name1");
         Toast.makeText(getApplicationContext(), "onRestart()", Toast.LENGTH_SHORT).show();
         Log.i("TAG", "onRestart()");
     }
-*/
+
     public void backb(View view) {
-        DrawThread.qw=0;
-        DrawThread.t=0;
-finish(); finishActivity(1);
+        DrawThread.qw = 0;
+        DrawThread.t = 0;
+        finish();
+        finishActivity(1);
         Intent intent = new Intent(Main2Activity.this, MainActivity.class);
 
         startActivity(intent);
 
-        onPause();onStop();
+        onPause();
+        onStop();
 
 
     }
-
-
 
 
 }

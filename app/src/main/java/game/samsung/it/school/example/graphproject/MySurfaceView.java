@@ -1,20 +1,16 @@
 package game.samsung.it.school.example.graphproject;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.support.annotation.Size;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 public class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback {
     private DrawThread drawThread;
-    private boolean drawing = false;
 
 
     public MySurfaceView(Context context) {
@@ -79,27 +75,24 @@ class DrawThread extends Thread {
     private volatile boolean running = true;
     private int FirstNode = 0;
     private int SecondNode = 0;
-    public static int qw = 0;
-    public int m;
-    String name;
-
+    protected static int qw = 0;
+    private int m;
+    private String name;
     private GraphMatrix graphMatrix = new GraphMatrix(MainActivity.k);
-
-
-    public static int t = 0;
+    static int t = 0;
 
     public DrawThread(Context context, SurfaceHolder surfaceHolder) {
         this.surfaceHolder = surfaceHolder;
 
     }
 
-    public void searchFirstNode(int x, int y) {
+    void searchFirstNode(int x, int y) {
 
         FirstNode = graphMatrix.searchNode(x, y);
         if ((FirstNode != 0)) t++;
     }
 
-    public void searchSecondNode(int x, int y) {
+    void searchSecondNode(int x, int y) {
         SecondNode = graphMatrix.searchNode(x, y);
         if ((SecondNode != 0) && (FirstNode != SecondNode) && (FirstNode != 0)) {
             if (graphMatrix.retweight(FirstNode, SecondNode) == 1) t++;
@@ -182,14 +175,14 @@ class DrawThread extends Thread {
                     paint.setTextSize((float) (graphMatrix.x * 0.2));
                     if (qw == 2) {
                         paint.setColor(Color.RED);
-                        canvas.drawText("Выиграл игрок", graphMatrix.x, graphMatrix.y, paint);
+                        canvas.drawText("Выиграл ", graphMatrix.x, graphMatrix.y, paint);
                         canvas.drawText(Main2Activity.nm1, graphMatrix.x, (int) (graphMatrix.y + graphMatrix.y * 0.2), paint);
                     }
 
                     if (qw == 1) {
                         paint.setColor(Color.BLUE);
 
-                        canvas.drawText("Выиграл игрок", graphMatrix.x, graphMatrix.y, paint);
+                        canvas.drawText("Выиграл ", graphMatrix.x, graphMatrix.y, paint);
                         canvas.drawText(Main2Activity.nm2, graphMatrix.x, (int) (graphMatrix.y + graphMatrix.y * 0.2), paint);
                     }
                 }
