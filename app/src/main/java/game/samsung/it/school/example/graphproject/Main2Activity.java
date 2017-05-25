@@ -28,44 +28,6 @@ public class Main2Activity extends AppCompatActivity {
         nm2 = getIntent().getStringExtra("name2");
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        Toast.makeText(getApplicationContext(), "onStart()", Toast.LENGTH_SHORT).show();
-        Log.i("TAG", "onStart()");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Toast.makeText(getApplicationContext(), "onResume()", Toast.LENGTH_SHORT).show();
-        Log.i("TAG", "onResume()");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        Toast.makeText(getApplicationContext(), "onPause()", Toast.LENGTH_SHORT).show();
-        Log.i("TAG", "onPause()");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Toast.makeText(getApplicationContext(), "onStop()", Toast.LENGTH_SHORT).show();
-        Log.i("TAG", "onStop()");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-
-        Toast.makeText(getApplicationContext(), "onRestart()", Toast.LENGTH_SHORT).show();
-        Log.i("TAG", "onRestart()");
-    }
-
     public void backb(View view) {
         DrawThread.qw = 0;
         DrawThread.t = 0;

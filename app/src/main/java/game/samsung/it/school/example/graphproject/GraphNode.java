@@ -1,6 +1,5 @@
 package game.samsung.it.school.example.graphproject;
 
-import java.util.LinkedList;
 
 
 public class GraphNode {
